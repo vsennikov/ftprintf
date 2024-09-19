@@ -1,32 +1,22 @@
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror -g
-CFLAGS = ""
-
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
-INCLUDES = -I. -I$(LIBFT_DIR)
-
+CFLAGS = -Wall -Wextra -Werror
+ARFLAGS = ar rcs
 SRCS = ft_printf.c ft_putnbr_base.c
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = a.out
+NAME = libftprintf.a
 
-all: $(LIBFT) $(NAME)
-
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) $(INCLUDES)
+	@$(ARFLAGS) $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	@rm -f $(NAME) $(OBJS)
 
 re: fclean all
 

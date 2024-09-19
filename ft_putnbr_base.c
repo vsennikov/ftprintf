@@ -6,13 +6,13 @@
 /*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:54:50 by vsenniko          #+#    #+#             */
-/*   Updated: 2024/09/18 16:01:15 by vsenniko         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:19:51 by vsenniko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_symbols(unsigned long nbr, char *base, unsigned long size)
+static int	print_symbols(unsigned int nbr, char *base, unsigned int size)
 {
 	char	ch;
 	int		counter;
@@ -25,19 +25,19 @@ int	print_symbols(unsigned long nbr, char *base, unsigned long size)
 	return (counter);
 }
 
-int	ft_putnbr_base(long nbr, char *base)
+int	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	unsigned long	i;
+	unsigned int	i;
 
 	i = 0;
 	while (base[i] != '\0')
 		i++;
-	return (print_symbols((unsigned long) nbr, base, i));
+	return (print_symbols(nbr, base, i));
 }
 
 int	ft_putnbr_decimal(int nbr, char *base)
 {
-	int	counter;
+	int		counter;
 	long	lnbr;
 
 	counter = 0;
@@ -56,6 +56,8 @@ int	ft_putnbr_add(void *add, char *base)
 	int	counter;
 
 	counter = 0;
+	if (add == 0)
+		return (write_str("(nil)"));
 	counter += write_str("0x");
 	counter += ft_putnbr_base((unsigned long) add, base);
 	return (counter);
