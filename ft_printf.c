@@ -6,7 +6,7 @@
 /*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:58:57 by vsenniko          #+#    #+#             */
-/*   Updated: 2024/09/19 19:18:58 by vsenniko         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:31:04 by vsenniko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	choose_func(char c, va_list ap)
 	else if (c == 'X')
 		j += ft_putnbr_base(va_arg(ap, unsigned int), "0123456789ABCDEF");
 	else if (c == 'p')
-		j += ft_putnbr_add(va_arg(ap, void *), "0123456789abcdef");
+		j += ft_putnbr_add(va_arg(ap, unsigned long), "0123456789abcdef");
 	else
 	{
 		j += write_char('%');
@@ -153,6 +153,11 @@ int	ft_printf(const char *str, ...)
 	// counter = ft_printf("%p\n", p3);
 	// printf("ft_printf counter = %d\n", counter);
 	// counter = printf("%p\n", p3);
+	// printf("printf counter = %d\n", counter);
+	// printf("============================\n");
+	// counter = ft_printf("%p %p\n", LONG_MIN, LONG_MAX);
+	// printf("ft_printf counter = %d\n", counter);
+	// counter = printf("%p %p\n", LONG_MIN, LONG_MAX);
 	// printf("printf counter = %d\n", counter);
 	// printf("============================\n");
 
