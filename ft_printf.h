@@ -1,0 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/18 12:59:28 by vsenniko          #+#    #+#             */
+/*   Updated: 2024/09/18 15:56:32 by vsenniko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <unistd.h>
+# include <stdarg.h>
+
+int	ft_printf(const char *str, ...);
+int	write_str(char *str);
+int	ft_putnbr_decimal(int nbr, char *base);
+int	ft_putnbr_base(long nbr, char *base);
+int	ft_putnbr_add(void *add, char *base);
+#endif
