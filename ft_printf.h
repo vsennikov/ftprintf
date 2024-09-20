@@ -6,7 +6,7 @@
 /*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:59:28 by vsenniko          #+#    #+#             */
-/*   Updated: 2024/09/20 14:01:22 by vsenniko         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:02:35 by vsenniko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-//
+
 int	ft_printf(const char *format, ...);
 int	write_str(char *str);
 int	ft_putnbr_decimal(int nbr, char *base);
