@@ -6,7 +6,7 @@
 /*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:58:57 by vsenniko          #+#    #+#             */
-/*   Updated: 2024/09/19 20:31:04 by vsenniko         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:58:16 by vsenniko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,21 @@ static int	choose_func(char c, va_list ap)
 	return (j);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
 	int		counter;
 
-	va_start(ap, str);
+	va_start(ap, format);
 	i = 0;
 	counter = 0;
-	while (str[i] != '\0')
+	while (format[i] != '\0')
 	{
-		if (str[i] == '%')
-			counter += choose_func(str[++i], ap);
+		if (format[i] == '%')
+			counter += choose_func(format[++i], ap);
 		else
-			counter += write(1, &str[i], 1);
+			counter += write(1, &format[i], 1);
 		i++;
 	}
 	va_end(ap);
