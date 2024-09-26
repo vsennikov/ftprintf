@@ -6,7 +6,7 @@
 /*   By: vsenniko <vsenniko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:58:57 by vsenniko          #+#    #+#             */
-/*   Updated: 2024/09/20 13:58:16 by vsenniko         ###   ########.fr       */
+/*   Updated: 2024/09/26 13:06:26 by vsenniko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	i = 0;
 	counter = 0;
+	if (format == NULL)
+		return (-1);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -85,6 +87,14 @@ int	ft_printf(const char *format, ...)
 // #include <limits.h>
 // int    main(void)
 // {
+// 	int counter; 
+
+// 	counter = ft_printf(NULL);
+// 	printf("%d\n", counter);
+// 	counter = printf(NULL);
+// 	printf("%d", counter);
+
+// }
 // 	int	counter;
 // 	//%c
 	// counter = ft_printf("%c\n", 'a');
